@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Test Your Mind</title>
+	<style type="text/css">
+		body{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: sans-serif;
+		}
+		.centerS{
+			margin: 0%;
+			width: 100%;
+			height: 100%;
+			padding: 20px;
+			border: 2px solid black;
+		}
+		
+		label{
+			color: blue;
+			font-weight: 500;
+			font-size: 70px;
+		
+		}
+		#correct{
+			font-size: 45px;
+			color: green;
+		}
+		#wrong{
+			font-size: 45px;
+			color: red;
+		}
+		#correct1{
+			font-size: 45px;
+			color: green;
+		}
+		#wrong1{
+			font-size: 45px;
+			color: red;
+		}
+		p{
+			text-align: center;
+		}
+		#ans{
+			height: 70px;
+			font-size: 60px;
+			width: 50%;
+			text-align: center;
+		}
+		#btn{
+			width: 80%;
+			height: 70px;
+			font-size: 45px;
+			border-radius: 10px;
+			border: none;
+			background-image: linear-gradient(to right,rgb(159, 159, 247) 50%,rgb(56, 56, 243) 110%);
+		}
+
+	</style>
+</head>
+<body>
+	<div class="centerS">
+		<div>
+			<p id="correct"><b>Correct </b><label id="correct1">0</label></p>
+		</div>
+		<div>
+			<p id="wrong"><b>Wrong </b><label id="wrong1">0</label></p>
+		</div>
+		<p><label id="first">1</label><label id="sign"></label><label id="second"></label><label>=</label></p>
+		<p><input type="Number" id="ans" autofocus="" placeholder="ANS"></p>
+		<p><input type="button" value="Check" id="btn" onclick="check();"></p>
+	</div>
+	<script type="text/javascript">
+			var f1=document.getElementById('first');
+			var s1=document.getElementById('second');
+			var x1=document.getElementById('sign');
+			var test1=document.getElementById('ans');
+			var correct1=document.getElementById('correct1');
+			var wrong1=document.getElementById('wrong1');
+			var f2=0;
+			var s2=0;
+			var correct=0,wrong=0;
+		onload=function()
+		{
+			var f=Math.floor(Math.random()*20)+1;
+			var s=Math.floor(Math.random()*20)+1;
+			f1.innerHTML=f;
+			s1.innerHTML=s;
+			x1.innerHTML=" + ";
+			f2=f;
+			s2=s;
+		}
+		function check() {
+			// body...
+			test=test1.value;
+			if(f2+s2==test)
+			{
+				var f=Math.floor(Math.random()*20)+1;
+				var s=Math.floor(Math.random()*20)+1;
+				f1.innerHTML=f;
+				s1.innerHTML=s;
+				x1.innerHTML=" + ";
+				test1.value="";
+				f2=f;
+				s2=s;
+				correct++;
+				correct1.innerHTML=correct;		
+			}
+			else
+			{
+				wrong++;
+				wrong1.innerHTML=wrong;
+				test1.value="";
+			}	
+		}
+	</script>
+</body>
+</html>
